@@ -21,10 +21,10 @@ ADD ./board /board
 RUN /bin/bash -c '\
 apt-get update && \
 apt-get install -y sudo make && \
-+ apt-get install -y sudo git && \
-+ apt-get install -y sudo build-essential && \
-+ apt-get install -y sudo qemu-user-static && \
-+ apt-get install -y sudo bc && \
+apt-get install -y sudo git && \
+apt-get install -y sudo build-essential && \
+apt-get install -y sudo qemu-user-static && \
+apt-get install -y sudo bc && \
 ln -sfr /build/Makefile /Makefile && \
 source /build/setup.sh && \
 make -C /build prereqs'
