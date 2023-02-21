@@ -1,0 +1,67 @@
+#!/bin/busybox sh
+#set -x
+# set -e
+
+function partition_table_image {
+     if [[ $1 -gt 7000000000 ]] && [[ $1 -lt 8000000000 ]]; then
+         echo "partition-table-8gb.img"
+     elif [[ $1 -gt 14000000000 ]] && [[ $1 -lt 17000000000 ]]; then
+         echo "partition-table-16gb.img"
+     elif [[ $1 -gt 60000000000 ]]; then
+         echo "partition-table-64gb.img"
+     fi
+}
+
+function log {
+     echo "$@"
+     echo "$@" > /dev/tty1
+}
+
+exec 0</dev/ttymxc0
+exec 1>/dev/ttymxc0
+exec 2>/dev/ttymxc0
+/bin/busybox --install -s
+mount -n -t devtmpfs devtmpfs /dev
+mount -n -t proc proc /proc
+mount -n -t sysfs sysfs /sys
+mkdir -p /tmp/sdcard
+mount /dev/mmcblk1p1 /tmp/sdcard
+
+PARTITION_SIZE=$(echo $(cat /sys/class/block/mmcblk0/size) \* 512 | bc)
+PARTITION_IMAGE=$(partition_table_image ${PARTITION_SIZE})
+
+log
+log "=== FLASH START! ==="
+
+log "* Writing partition table"
+dd if=/tmp/sdcard/${PARTITION_IMAGE} of=/dev/mmcblk0
+partprobe /dev/mmcblk0
+echo 0 > /sys/block/mmcblk0boot0/force_ro
+
+log "* Writing bootloader..."
+dd if=/tmp/sdcard/u-boot.imx of=/dev/mmcblk0boot0 bs=512 seek=66
+
+log "* Writing boot filesystem..."
+dd if=/tmp/sdcard/boot.img of=/dev/mmcblk0p1
+
+log "* Writing home filesystem..."
+dd if=/tmp/sdcard/home.img of=/dev/mmcblk0p3
+
+log "* Writing root filesystem..."
+dd if=/tmp/sdcard/rootfs.img of=/dev/mmcblk0p4
+
+log "=== FLASH END! ==="
+sync
+sync
+sync
+
+log
+log "==============================================================="
+log "Powering down the system. Please remove the SD card, change the"
+log "boot switches to boot from the internal eMMC (should be set to"
+log "on-off-off-off), remove and reconnect power."
+log "==============================================================="
+log
+log "Board will power down in 10 seconds..."
+poweroff -d 10 -f
+

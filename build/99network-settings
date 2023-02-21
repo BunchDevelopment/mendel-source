@@ -1,0 +1,6 @@
+Acquire::Retries 10;
+Acquire::http::Timeout 30;
+
+// Uncomment next line if you need to use proxy
+//Acquire::http::Proxy "http://<proxy_address>:<proxy_port>";
+

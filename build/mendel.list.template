@@ -1,0 +1,8 @@
+deb [arch=armhf,arm64 trusted=yes] https://mendel-linux.org/apt/eagle eagle main
+deb-src [trusted=yes] https://mendel-linux.org/apt/eagle eagle main
+deb [arch=armhf,arm64 trusted=yes] https://mendel-linux.org/apt/eagle eagle-bsp-%BOARDNAME% main
+deb-src [trusted=yes] https://mendel-linux.org/apt/eagle eagle-bsp-%BOARDNAME% main
+deb [arch=armhf,arm64 trusted=yes] https://packages.cloud.google.com/apt mendel-eagle main
+deb-src [trusted=yes] https://packages.cloud.google.com/apt mendel-eagle main
+deb [arch=armhf,arm64 trusted=yes] https://packages.cloud.google.com/apt mendel-eagle-bsp-%BOARDNAME% main
+deb-src [trusted=yes] https://packages.cloud.google.com/apt mendel-eagle-bsp-%BOARDNAME% main

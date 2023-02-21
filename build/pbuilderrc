@@ -1,0 +1,14 @@
+# this is your configuration file for pbuilder.
+# the file in /usr/share/pbuilder/pbuilderrc is the default template.
+# /etc/pbuilderrc is the one meant for overwriting defaults in
+# the default template
+#
+# read pbuilderrc.5 document for notes on specific options.
+OTHERMIRROR="deb https://mendel-linux.org/apt/eagle eagle main|deb https://mendel-linux.org/apt/eagle eagle-bsp-$BOARD_NAME main|deb https://packages.cloud.google.com/apt mendel-eagle main|deb https://packages.cloud.google.com/apt mendel-eagle-bsp-$BOARD_NAME main"
+PBUILDERSATISFYDEPENDSCMD=/usr/lib/pbuilder/pbuilder-satisfydepends-apt
+export DEPSBASE=$PRODUCT_OUT/packages
+BINDMOUNTS="$DEPSBASE $ROOTDIR"
+APTCACHE=$ROOTDIR/cache/pbuilder_apt
+APTCACHEHARDLINK=no
+BUILDPLACE=$PRODUCT_OUT/obj/PBUILDER
+USENETWORK=yes

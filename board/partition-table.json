@@ -1,0 +1,37 @@
+{
+  "settings": {
+    "disk_alignment": "8 MiB",
+    "disk_guid": "85b83f23-51c4-4403-8bac-906ff5800f4e"
+  },
+  "partitions": [
+    {
+      "label": "boot",
+      "size": "128 MiB",
+      "guid": "595059e1-7b18-4e71-98f8-86b0ef75fe34",
+      "type_guid": "brillo_boot",
+      "position": 1
+    },
+    {
+      "label": "misc",
+      "size": "1 MiB",
+      "guid": "auto",
+      "type_guid": "brillo_misc",
+      "position": 2
+    },
+    {
+      "label": "home",
+      "size": "2 GiB",
+      "guid": "auto",
+      "type_guid": "brillo_userdata",
+      "position": 3
+    },
+    {
+      "label": "rootfs",
+      "size": "2 GiB",
+      "grow": true,
+      "guid": "70672ec3-5eee-49ff-b3b1-eb1fbd406bf5",
+      "type_guid": "brillo_system",
+      "position": 4
+    }
+  ]
+}

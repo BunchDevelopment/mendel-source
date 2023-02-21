@@ -1,0 +1,8 @@
+loadaddr=0x40480000
+fdt_addr=0x43000000
+initrd_addr=0x43800000
+ext2load mmc 1:1 ${loadaddr} Image
+setenv bootargs "console=ttymxc0 console=tty0 earlycon=ec_imx6q,0x30860000,115200"
+ext2load mmc 1:1 ${fdt_addr} fsl-imx8mq-phanbell.dtb
+ext2load mmc 1:1 ${initrd_addr} initramfs.cpio.gz.uboot
+booti ${loadaddr} ${initrd_addr} ${fdt_addr}

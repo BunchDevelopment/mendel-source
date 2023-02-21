@@ -1,0 +1,3 @@
+/dev/mmcblk1p2 / ext4 noatime,defaults 0 1
+/dev/mmcblk1p1 /boot ext2 noatime,sync,defaults 0 2
+tmpfs /var/log tmpfs defaults 0 0

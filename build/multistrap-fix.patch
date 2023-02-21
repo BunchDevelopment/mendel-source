@@ -1,0 +1,19 @@
+--- /usr/sbin/multistrap        2018-11-21 14:00:46.000000000 +0000
++++ multistrap  2019-08-27 20:45:24.823347148 +0000
+@@ -319,6 +319,7 @@
+ $config_str .= " -o Dir::Etc::Trusted=" . shellescape("${dir}${etcdir}trusted.gpg");
+ $config_str .= " -o Apt::Get::AllowUnauthenticated=true"
+ 	if (defined $noauth);
++$config_str .= " -o Acquire::AllowInsecureRepositories=true";
+ $config_str .= " -o Apt::Get::Download-Only=true";
+ $config_str .= " -o Apt::Install-Recommends=false"
+ 	if (not defined $allow_recommends);
+@@ -387,7 +389,7 @@
+ $str = join (' ', @s);
+ print "$apt_get -y install $str\n";
+ $retval = 0;
+-$retval = system ("$apt_get -y install $str");
++$retval = system ("$apt_get -y --allow-unauthenticated install $str");
+ $retval >>= 8;
+ die (sprintf (_g("apt download failed. Exit value: %d\n"),$retval))
+ 	if ($retval != 0);
