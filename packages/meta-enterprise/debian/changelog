@@ -1,0 +1,23 @@
+meta-enterprise (2-2) mendel-eagle; urgency=medium
+
+  * Remove explicit python3-edgetpu dependency.
+
+ -- Coral <coral-support@google.com>  Tue, 10 Nov 2020 11:32:55 -0800
+
+meta-enterprise (2-1) mendel-day; urgency=medium
+
+  * Upgrade from kernel 4.9.51-imx to 4.14.98-imx
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:24:23 -0500
+
+meta-enterprise (1-1) mendel-chef; urgency=medium
+
+  * Lintian fixups.
+
+ -- Coral <coral-support@google.com>  Thu, 04 Apr 2019 13:57:00 -0800
+
+meta-enterprise (1-0) mendel-chef; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 18 Mar 2019 16:14:00 -0800

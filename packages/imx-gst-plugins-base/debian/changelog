@@ -1,0 +1,42 @@
+imx-gst-plugins-base (1.14.4+imx-6) mendel-day; urgency=medium
+
+  * Fix dmabuf export of odd width textures in gldownload.
+
+ -- Coral <coral-support@google.com>  Tue, 02 Jun 2020 10:46:56 -0700
+
+imx-gst-plugins-base (1.14.4+imx-5) mendel-day; urgency=medium
+
+  * Lintian fixes.
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 16:06:38 -0500
+
+imx-gst-plugins-base (1.14.4+imx-4) mendel-day; urgency=medium
+
+  * Pack RGB buffers downloaded from GPU.
+
+ -- Coral <coral-support@google.com>  Tue, 15 Oct 2019 15:28:37 -0500
+
+imx-gst-plugins-base (1.14.4+imx-3) mendel-day; urgency=medium
+
+  * Update to 1.14.4
+
+ -- Coral <coral-support@google.com>  Tue, 15 Oct 2019 15:28:25 -0500
+
+imx-gst-plugins-base (1.12.2+imx-2) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-gst-plugins-base (1.12.2+imx-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+  
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-gst-plugins-base (1.12.2+imx-0) unstable; urgency=medium
+
+  * Initial release
+
+ -- Coral <coral-support@google.com>  Wed, 04 Jul 2018 10:45:53 -0800
+

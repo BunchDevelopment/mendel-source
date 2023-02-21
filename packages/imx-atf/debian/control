@@ -1,0 +1,14 @@
+Source: imx-atf
+Section: misc
+Priority: optional
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10), gcc-aarch64-linux-gnu
+Standards-Version: 3.9.8
+
+Package: imx-atf
+Section: misc
+Priority: optional
+Architecture: arm64 armhf
+Depends: ${misc:Depends}
+Description: Arm Trusted Framework for IMX platform
+ This contains the Arm Trusted Framework for the NXP i.MX platform.

@@ -1,0 +1,52 @@
+imx-gst-plugins-bad (1.14.4+imx-7) mendel-day; urgency=medium
+
+  * Revert and fix changes relating to fullscreen video
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 15:42:34 -0500
+
+imx-gst-plugins-bad (1.14.4+imx-6) mendel-day; urgency=medium
+
+  * Update to 1.14.4
+
+ -- Coral <coral-support@google.com>  Thu, 06 Jun 2019 13:37:52 -0700
+
+imx-gst-plugins-bad (1.12.2+imx-5) mendel-chef; urgency=medium
+
+  * Various waylandsink leak fixes
+  * Fix NXPs custom glupload path for certain formats
+  * Demote buggy FPS prints from g_print to GST_DEBUG
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-gst-plugins-bad (1.12.2+imx-4) mendel-beaker; urgency=medium
+
+  * Use highp float precision in YUY2 color convert shaders.
+
+ -- Coral <coral-support@google.com>  Wed, 06 Feb 2019 10:21:20 -0800
+
+imx-gst-plugins-bad (1.12.2+imx-3) mendel-beaker; urgency=medium
+
+  * Use the correct linux-image version number.
+
+ -- Coral <coral-support@google.com>  Wed, 30 Jan 2019 12:00:00 -0800
+
+imx-gst-plugins-bad (1.12.2+imx-2) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-gst-plugins-bad (1.12.2+imx-1) unstable; urgency=medium
+
+  * Fix crash in kmssink
+  * Revert revert of NXP patch to glupload, instead use glcolorconvert disable-passthrough=true
+  * Fix display context name in gst_wayland_display_handle_context_new
+  * Revert accidentally merged glimagesink patch that can cause tearing
+
+ -- Coral <coral-support@google.com>  Tue, 30 Oct 2018 14:21:43 -0800
+
+imx-gst-plugins-bad (1.12.2+imx-0) unstable; urgency=medium
+
+  * Initial release
+
+ -- Coral <coral-support@google.com>  Wed, 04 Jul 2018 10:45:53 -0800

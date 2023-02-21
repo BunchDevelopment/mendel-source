@@ -1,0 +1,23 @@
+Source: mendel-minimal
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: mendel-minimal
+Section: misc
+Priority: optional
+Architecture: all
+Depends: e2fsprogs(>=1.43), adduser, sudo, openssh-server, locales, avahi-daemon,
+  bluez, network-manager, passwd, python2.7, runonce, haveged, ${misc:Depends}
+Description: Defines the files and packages for a minimal Mendel install
+ This package contains the initial "run once" scripts that perform
+ initial startup work such as resizing the root filesystem to match the emmc
+ size, adding in known users, enabling services that users will likely want by
+ default, and other housekeeping behaviors (such as forcing a regeneration of
+ ssh host keys).
+ .
+ This package actually contains the runonce scripts that do the above. Like the
+ runonce package, removing this one should have little effect on a running
+ system that has executed those scripts already.

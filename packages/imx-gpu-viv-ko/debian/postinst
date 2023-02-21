@@ -1,0 +1,4 @@
+#!/bin/bash -e
+
+depmod -a 4.14.98-imx
+#DEBHELPER#

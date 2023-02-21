@@ -1,0 +1,22 @@
+Source: imx-board-tools
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: imx-board-tools
+Section: misc
+Priority: optional
+Architecture: all
+Depends: gstreamer1.0-plugins-bad,
+         gstreamer1.0-plugins-base,
+         gstreamer1.0-plugins-good,
+         python3-gi,
+         python3-gst-1.0,
+         python3,
+         weston-imx,
+         ${misc:Depends}
+Description: Miscellaneous tools to support the Coral Edge TPU Board
+ Various tools to support the Edge TPU Board, such as a camera snapshot tool,
+ and a tool to help with GPIO pinouts.

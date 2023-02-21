@@ -1,0 +1,24 @@
+edgetpudemo (4-1) mendel-eagle; urgency=medium
+
+  * Cut for eagle release.
+
+ -- Coral <coral-support@google.com>  Mon, 04 Oct 2021 12:22:57 -0700
+
+edgetpudemo (3-1) mendel-day; urgency=medium
+
+  * Cut for day release.
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:21:20 -0500
+
+edgetpudemo (2-1) mendel-chef; urgency=medium
+
+  * Add separate high-res video file for desktop rendering.
+  * Allow truck to be detected in addition to the car.
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+edgetpudemo (1.0-1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Thu, 21 Feb 2019 13:22:55 -0800

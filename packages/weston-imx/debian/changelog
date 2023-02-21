@@ -1,0 +1,55 @@
+weston-imx (5.0.0-4) mendel-day; urgency=medium
+
+  * weston: Add set up SIGUSR1 blocking early using pthread_sigmask()
+
+ -- Coral <coral-support@google.com>  Fri, 08 Nov 2019 14:44:44 -0600
+
+weston-imx (5.0.0-3) mendel-day; urgency=medium
+
+  * Use gbm-format=argb8888 for primary output plane
+  * Revert "Temporarily disable dmabuf video -> overlay"
+
+ -- Coral <coral-support@google.com>  Mon, 28 Oct 2019 12:02:48 -0500
+
+weston-imx (5.0.0-2) mendel-day; urgency=medium
+
+  * Revert a bunch of changes that cause very slow 4K playback.
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 15:39:25 -0500
+
+weston-imx (5.0.0-1) mendel-chef; urgency=medium
+
+  * Import rel_imx_4.14.98_2.0.0_ga
+
+ -- Coral <coral-support@google.com>  Tue, 20 Aug 2019 11:51:23 -0700
+
+weston-imx (3.0.0-4) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+weston-imx (3.0.0-3) mendel-beaker; urgency=medium
+
+  * Add imx-gpu-viv to runtime dependencies
+
+ -- Coral <coral-support@google.com>  Fri, 18 Jan 2019 16:42:00 -0800
+
+weston-imx (3.0.0-2) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+weston-imx (3.0.0-1) unstable; urgency=medium
+
+  * Update service file to run as non-root user
+  * Add weston.ini and some minimal configuration
+
+ -- Coral <coral-support@google.com>  Wed, 14 Nov 2018 14:36:52 -0800
+
+weston-imx (3.0.0-0) unstable; urgency=medium
+
+  * Initial release
+
+ -- Coral <coral-support@google.com>  Wed, 04 Jul 2018 10:45:53 -0800

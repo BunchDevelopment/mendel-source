@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+IMX_FIRMWARE_DIR=/usr/share/imx-firmware/imx8m
+
+%:
+	dh $@ --with systemd
+
+override_dh_auto_build:
+	make CROSS_COMPILE=aarch64-linux-gnu- ARCH=arm imx8mq_phanbell_defconfig _all
+
+	objcopy -I binary -O binary --pad-to 0x4000 --gap-fill 0x0 $(IMX_FIRMWARE_DIR)/lpddr4_pmu_train_1d_dmem.bin lpddr4_pmu_train_1d_dmem_pad.bin
+	objcopy -I binary -O binary --pad-to 0x8000 --gap-fill 0x0 $(IMX_FIRMWARE_DIR)/lpddr4_pmu_train_1d_imem.bin lpddr4_pmu_train_1d_imem_pad.bin
+	objcopy -I binary -O binary --pad-to 0x8000 --gap-fill 0x0 $(IMX_FIRMWARE_DIR)/lpddr4_pmu_train_2d_imem.bin lpddr4_pmu_train_2d_imem_pad.bin
+
+	cat lpddr4_pmu_train_1d_imem_pad.bin lpddr4_pmu_train_1d_dmem_pad.bin > lpddr4_pmu_train_1d_fw.bin
+	cat lpddr4_pmu_train_2d_imem_pad.bin $(IMX_FIRMWARE_DIR)/lpddr4_pmu_train_2d_dmem.bin > lpddr4_pmu_train_2d_fw.bin
+	cat spl/u-boot-spl.bin lpddr4_pmu_train_1d_fw.bin lpddr4_pmu_train_2d_fw.bin > u-boot-spl-ddr.bin
+
+	bash /usr/bin/mkimage_fit_atf.sh \
+		/usr/share/imx-atf/bl31.bin \
+		u-boot-nodtb.bin \
+		arch/arm/dts/fsl-imx8mq-phanbell.dtb > u-boot.its
+	tools/mkimage -E -p 0x3000 -f u-boot.its u-boot.itb
+
+	tools/mkimage -A arm -T script -O linux -d debian/boot.txt boot.scr
+
+	$(IMX_FIRMWARE_DIR)/mkimage_imx8 -fit \
+		-signed_hdmi $(IMX_FIRMWARE_DIR)/signed_hdmi_imx8m.bin \
+		-loader u-boot-spl-ddr.bin 0x7E1000 \
+		-second_loader u-boot.itb 0x40200000 0x60000 \
+		-out u-boot.imx
+
+override_dh_install:
+	install -d debian/uboot-imx/boot
+	install -m 644 -o 0 -g 0 u-boot.imx debian/uboot-imx/boot/u-boot.imx
+	install -m 644 -o 0 -g 0 boot.scr debian/uboot-imx/boot/boot.scr
+	install -m 644 -o 0 -g 0 debian/overlays.txt debian/uboot-imx/boot/overlays.txt
+	install -d debian/uboot-mkimage/usr/bin
+	install -m 644 -o 0 -g 0 tools/mkimage debian/uboot-mkimage/usr/bin/mkimage
+	dh_install
+
+override_dh_strip:
+	true

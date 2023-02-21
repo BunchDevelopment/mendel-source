@@ -1,0 +1,29 @@
+wayland-protocols-imx (1.17+imx-1) UNRELEASED; urgency=medium
+
+  * Update to 1.17
+
+ -- Coral <coral-support@google.com>  Wed, 28 Aug 2019 15:37:36 -0700
+
+wayland-protocols-imx (1.16+imx-3) UNRELEASED; urgency=medium
+
+  * Update to 1.16
+
+ -- Coral <coral-support@google.com>  Wed, 05 Jun 2019 17:51:32 -0700
+
+wayland-protocols-imx (1.13+imx-2) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+wayland-protocols-imx (1.13+imx-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker branch and version normalization.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+wayland-protocols-imx (1.13+imx-0) unstable; urgency=medium
+
+  * Initial release
+
+ -- Coral <coral-support@google.com>  Mon, 08 Feb 2016 10:45:53 +0100

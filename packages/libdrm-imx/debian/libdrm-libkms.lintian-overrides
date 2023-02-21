@@ -1,0 +1,2 @@
+libdrm-libkms: package-name-doesnt-match-sonames libkms1
+libdrm-libkms: no-shlibs-control-file usr/lib/aarch64-linux-gnu/libkms.so.1.0.0

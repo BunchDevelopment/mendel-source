@@ -1,0 +1,16 @@
+Source: mendel-distro-info-data
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: devel
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: mendel-distro-info-data
+Section: devel
+Priority: optional
+Architecture: all
+Depends: distro-info-data, ${misc:Depends}
+Description: info about Mendel's releases (data files)
+ This file contains information about all releases of Mendel.
+ .
+ This package contains the Mendel specific data files.

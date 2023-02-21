@@ -1,0 +1,21 @@
+#!/usr/bin/make -f
+
+CFLAGS += -I$(shell realpath extinc)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	-dh_auto_clean
+
+override_dh_auto_configure:
+	# HACK in ion.h
+	mkdir -p extinc/linux
+	find /usr/src/*/include/uapi -name ion.h -exec cp {} extinc/linux \;
+	find /usr/src/*/include/uapi -name dma-buf.h -exec cp {} extinc/linux \;
+	find /usr/src/*/include/generated/uapi/linux -name version.h -exec cp {} extinc/linux \;
+	dh_auto_configure -- --disable-static --disable-x11 --disable-v4l2_core --disable-v4lsink PLATFORM=MX8
+
+override_dh_install:
+	rm -rf debian/imx-gst1.0-plugin/usr/include
+	dh_install

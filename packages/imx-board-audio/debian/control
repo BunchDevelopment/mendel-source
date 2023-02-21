@@ -1,0 +1,18 @@
+Source: imx-board-audio
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: sound
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: imx-board-audio
+Section: sound
+Priority: optional
+Architecture: all
+Depends: pulseaudio, ${misc:Depends}
+Description: Audio and routing settings for the Enterprise Board
+ This package is a semi-metapackage that includes audio route settings,
+ as well as dependencies on pulseaudio.
+ .
+ This package and it's dependencies are required to make the Enterprise
+ Board's audio components function as intended.

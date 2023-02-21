@@ -1,0 +1,20 @@
+Source: imx-gpu-viv-ko
+Maintainer: Coral <coral-support@google.com>
+Build-Depends:
+    debhelper (>=10),
+    gcc-aarch64-linux-gnu,
+    linux-headers-4.14.98-imx
+Standards-Version: 3.9.8
+Section: libs
+Priority: optional
+
+Package: imx-gpu-viv-ko
+Section: libs
+Priority: optional
+Architecture: arm64 armhf
+Depends:
+    ${misc:Depends},
+    kmod,
+Conflicts: imx-gpu-viv (<< 6.4.2-2)
+Description: Kernel module to support Vivante GPU.
+ This package contains the galcore kernel module for Vivante GPU.

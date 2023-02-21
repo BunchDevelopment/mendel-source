@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+%:
+	dh $@
+
+override_dh_auto_build:
+	make -f Makefile CROSS_COMPILE=aarch64-linux-gnu- all
+
+override_dh_auto_install:
+	install -d debian/enterprise-testing-tools/usr/bin
+	install -m 777 -o 0 -g 0 opengl/glesgears debian/enterprise-testing-tools/usr/bin
+	install -m 777 -o 0 -g 0 opengl/es2gears debian/enterprise-testing-tools/usr/bin
+	install -m 777 -o 0 -g 0 opencl/clexample debian/enterprise-testing-tools/usr/bin
+	dh_install

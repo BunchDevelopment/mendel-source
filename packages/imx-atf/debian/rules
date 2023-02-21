@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+DESTDIR=debian/imx-atf
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf build
+	dh_auto_clean
+
+override_dh_auto_build:
+	make LDFLAGS= CFLAGS= CROSS_COMPILE=aarch64-linux-gnu- PLAT=imx8mq bl31
+
+override_dh_auto_install:
+	dh_auto_install
+	install -d $(DESTDIR)/usr/share/imx-atf
+	install -m 644 -o 0 -g 0 build/imx8mq/release/bl31.bin $(DESTDIR)/usr/share/imx-atf/bl31.bin

@@ -1,0 +1,108 @@
+uboot-imx (5-3) mendel-eagle; urgency=medium
+
+  * Fix SD Card Boot, booting based on DIP switches while still ensuring
+    fastboot always writes to the eMMC.
+
+ -- Coral <coral-support@google.com>  Thu, 30 Sep 2021 10:13:18 -0700
+
+uboot-imx (5-2) mendel-eagle; urgency=medium
+
+  * uboot 4.19
+  * Update New Kingston 2GB timings for MP boards
+
+ -- Coral <coral-support@google.com>  Mon, 11 Jan 2021 13:43:00 -0700
+
+uboot-imx (5-1) mendel-day; urgency=medium
+
+  * uboot 4.19
+  * Update memory training to fix temp related hang
+
+ -- Coral <coral-support@google.com>  Wed, 29 Apr 2020 11:40:05 -0700
+
+uboot-imx (4-5) mendel-day; urgency=medium
+
+  * Upgrade to uboot 4.19
+
+ -- Coral <coral-support@google.com>  Mon, 23 Dec 2019 17:42:30 -0800
+
+uboot-imx (4-4) mendel-day; urgency=medium
+
+  * Revert revert to the previous timing file used in Chef.
+  * Update DDRC settings.
+  * Apply MLK-22578 to imx8mq.
+
+ -- Coral <coral-support@google.com>  Mon, 16 Dec 2019 15:21:49 -0800
+
+uboot-imx (4-3) mendel-day; urgency=medium
+
+  * Revert to the previous timing file used in Chef.
+
+ -- Coral <coral-support@google.com>  Fri, 08 Nov 2019 16:29:30 -0600
+
+uboot-imx (4-2) mendel-day; urgency=medium
+
+  * Enable USB wakeup support.
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 10:31:57 -0700
+
+uboot-imx (4-1) mendel-day; urgency=medium
+
+  * Updating the training programs for Micron.
+  * Ensuring Hynix boards also use the same timing as Micron.
+
+ -- Coral <coral-support@google.com>  Wed, 09 Oct 2019 15:21:16 -0700
+
+uboot-imx (3-2) mendel-chef; urgency=medium
+
+  * Add support for IMX8MQ 2.1 silicon.
+
+ -- Coral <coral-support@google.com>  Wed, 27 Mar 2019 15:21:16 -0700
+
+uboot-imx (3-1) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+uboot-imx (2-1) mendel-beaker; urgency=medium
+
+  * Force USB Type-C switch to UFP (device) mode to enable fastboot.
+
+ -- Coral <coral-support@google.com>  Wed, 28 Jan 2019 11:01:34 -0800
+
+uboot-imx (1-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker branch and version normalization.
+  * Add ability to load device tree overlays in boot partition.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+uboot-imx (0.5) animal; urgency=medium
+
+  * Add fallback selection for device tree
+
+ -- Coral <coral-support@google.com>  Thu, 06 Dec 2018 11:26:58 -0800
+
+uboot-imx (0.4) animal; urgency=medium
+
+  * Change PMIC voltages to latest configuration. 
+
+ -- Coral <coral-support@google.com>  Thu, 29 Nov 2018 17:47:09 -0800
+
+uboot-imx (0.3) animal; urgency=medium
+
+  * Updated Hynix dram training config.
+
+ -- Coral <coral-support@google.com>  Thu, 15 Nov 2018 16:19:33 -0800
+
+uboot-imx (0.2) unstable; urgency=medium
+
+  * Fixed board_id command for SKU7.
+
+ -- Coral <coral-support@google.com>  Fri, 09 Nov 2018 10:30:41 -0800
+
+uboot-imx (0.1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 04 Jun 2018 16:14:00 -0800

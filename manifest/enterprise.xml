@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <include name="mendel.xml"/>
+
+    <!-- BEGIN prebuilts -->
+    <project path="prebuilts" name="prebuilts" />
+    <!-- END prebuilts -->
+
+    <!-- BEGIN imx specific build tools -->
+    <project path="tools/imx-mkimage" name="imx-mkimage" />
+    <project path="packages/imx-mkimage" name="imx-mkimage-debian" />
+    <!-- END imx specific build tools -->
+
+    <!-- BEGIN imx BSP build config -->
+    <project name="board-enterprise" path="board" />
+    <!-- END imx BSP build config -->
+
+    <!-- BEGIN imx bootloader -->
+    <project name="uboot-imx" path="uboot-imx" />
+    <project name="uboot-imx-debian" path="packages/uboot-imx" />
+    <!-- END imx bootloader -->
+
+    <!-- BEGIN imx linux -->
+    <project name="linux-imx" path="linux-imx" />
+    <project name="linux-imx-debian" path="packages/linux-imx" />
+    <!-- END imx linux -->
+
+    <project name="libdrm-imx" path="libdrm-imx" />
+    <project name="libdrm-imx-debian" path="packages/libdrm-imx" />
+    <project name="imx-firmware" path="imx-firmware" />
+    <project name="imx-firmware-debian" path="packages/imx-firmware" />
+
+    <project name="imx-atf" path="imx-atf" />
+    <project name="imx-atf-debian" path="packages/imx-atf" />
+
+    <project path="imx-gstreamer" name="imx-gstreamer" />
+    <project path="imx-gst-plugins-base" name="imx-gst-plugins-base" />
+    <project path="imx-gst-plugins-good" name="imx-gst-plugins-good" />
+    <project path="imx-gst-plugins-bad" name="imx-gst-plugins-bad" />
+    <project path="imx-gst1.0-plugin" name="imx-gst1.0-plugin" />
+    <project path="packages/imx-board-tools" name="imx-board-tools" />
+    <project path="packages/imx-gstreamer" name="imx-gstreamer-debian" />
+    <project path="packages/imx-gst-plugins-base" name="imx-gst-plugins-base-debian" />
+    <project path="packages/imx-gst-plugins-good" name="imx-gst-plugins-good-debian" />
+    <project path="packages/imx-gst-plugins-bad" name="imx-gst-plugins-bad-debian" />
+    <project path="packages/imx-gst1.0-plugin" name="imx-gst1.0-plugin-debian" />
+
+    <project path="imx-gpu-viv-ko" name="imx-gpu-viv-ko" />
+    <project path="packages/imx-gpu-viv-ko" name="imx-gpu-viv-ko-debian" />
+
+    <project path="wayland-protocols-imx" name="wayland-protocols-imx" />
+    <project path="packages/wayland-protocols-imx" name="wayland-protocols-imx-debian" />
+
+    <project path="weston-imx" name="weston-imx" />
+    <project path="packages/weston-imx" name="weston-imx-debian" />
+
+    <project path="bluez-imx" name="bluez-imx" />
+    <project path="packages/bluez-imx" name="bluez-imx-debian" />
+
+    <project path="packages/edgetpuvision" name="edgetpuvision" />
+    <project path="packages/edgetpudemo" name="edgetpudemo" />
+
+    <project path="packages/imx-board-audio" name="imx-board-audio" />
+    <project path="packages/imx-board-wlan" name="imx-board-wlan" />
+    <project path="imx-board-wlan" name="imx-board-wlan-src" />
+
+    <project path="packages/meta-enterprise" name="meta-enterprise" />
+    <!-- END imx specific repos -->
+
+    <project path="a71ch-crypto-support" name="a71ch-crypto-support"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project path="packages/a71-crypto-support" name="a71ch-crypto-support-package"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <!-- BEGIN testing tools -->
+    <project name="mendel-testing-tools" path="mendel-testing-tools" />
+    <project name="enterprise-testing-tools-debian" path="packages/enterprise-testing-tools" />
+    <!-- END testing tools -->
+
+    <!-- BEGIN closed source repositories -->
+    <project name="imx-gpu-viv" path="imx-gpu-viv" revision="source"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project name="imx-gpu-viv-debian" path="packages/imx-gpu-viv"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <project name="imx-vpu-hantro" path="imx-vpu-hantro"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project name="imx-vpu-hantro-debian" path="packages/imx-vpu-hantro"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <project name="imx-vpuwrap" path="imx-vpuwrap"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project name="imx-vpuwrap-debian" path="packages/imx-vpuwrap"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <project name="kokoro-enterprise" path="kokoro"
+      groups="notdefault,internal" remote="coral-internal" revision="master" />
+    <!-- END closed source repositories -->
+</manifest>

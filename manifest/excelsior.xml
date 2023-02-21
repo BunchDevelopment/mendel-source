@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote fetch="sso://excelsior" name="excelsior"
+      review="sso://excelsior-review.googlesource.com"/>
+    <include name="mendel.xml"/>
+
+    <!-- BEGIN Dev Board Mini specfic repos -->
+
+    <!-- BEGIN mtk BSP config -->
+    <project remote="coral" path="board"
+      name="board-excelsior" />
+    <!-- END mtk BSP config -->
+
+    <!-- BEGIN mtk linux -->
+    <project remote="coral" path="linux"
+      name="linux-mtk" />
+    <!-- END mtk linux -->
+
+    <!-- BEGIN mtk bootloader repos -->
+    <project remote="excelsior" path="bootloader/mtk-lk"
+      groups="notdefault,internal"
+      name="excelsior-mendel/bootable/lk"  revision="baylibre/fparent/coral" />
+    <project remote="coral" path="bootloader/u-boot"
+      name="u-boot-mtk" />
+    <project remote="coral" path="bootloader/tf-a"
+      name="tf-a-mtk" />
+    <project remote="coral" path="bootloader/optee-os"
+      name="optee-os-mtk" />
+    <!-- END mtk bootloader repos -->
+
+    <!-- BEGIN connectivity repos -->
+    <project remote="coral" path="connectivity/mt7668-bluetooth-mod"
+      name="mt7668-bluetooth-mod" />
+    <project remote="coral" path="connectivity/mt7668-wifi-mod"
+      name="mt7668-wifi-mod" />
+    <project remote="excelsior" path="connectivity/mt7668-fw"
+      groups="notdefault,internal"
+      name="excelsior-mendel/connectivity/mt7668-fw" />
+    <!-- END connectivity repos -->
+
+    <!-- BEGIN graphics repos -->
+    <project remote="excelsior" path="graphics/img-fw"
+      groups="notdefault,internal"
+      name="excelsior-mendel/graphics/img-fw" />
+    <project remote="coral" path="graphics/wayland/weston"
+      name="weston-mtk" />
+    <!-- END graphics repos -->
+
+    <!-- BEGIN multimedia repos -->
+     <project remote="coral" path="multimedia/mtk-gst-plugins-bad"
+      name="mtk-gst-plugins-bad" />
+     <project remote="coral" path="multimedia/mtk-gst-plugins-base"
+      name="mtk-gst-plugins-base" />
+     <project remote="coral" path="multimedia/mtk-gst-plugins-good"
+      name="mtk-gst-plugins-good" />
+     <project remote="coral" path="multimedia/mtk-gstreamer"
+      name="mtk-gstreamer" />
+     <project remote="excelsior" path="multimedia/vpu"
+      groups="notdefault,internal"
+      name="excelsior-mendel/multimedia/vpu"/>
+     <project remote="excelsior" path="multimedia/mdpd"
+      groups="notdefault,internal"
+      name="excelsior-mendel/multimedia/mdpd"/>
+     <project remote="excelsior" path="multimedia/libmdp_prot"
+      groups="notdefault,internal"
+      name="excelsior-mendel/multimedia/libmdp_prot"/>
+    <!-- END multimedia repos -->
+
+    <!-- BEGIN mtk packages repos -->
+    <project remote="coral" path="packages/meta-excelsior"
+      name="meta-excelsior" />
+    <project remote="coral" path="packages/u-boot"
+      name="u-boot-mtk-debian" />
+    <project remote="excelsior" path="packages/lk-bootloader"
+      groups="notdefault,internal"
+      name="excelsior-mendel/packages/lk-bootloader" />
+    <project remote="coral" path="packages/optee-os"
+      name="optee-os-mtk-debian" />
+    <project remote="coral" path="packages/tf-a"
+      name="tf-a-mtk-debian" />
+    <project remote="coral" path="packages/excelsior-bootloader"
+      name="excelsior-bootloader" />
+    <project remote="coral" path="packages/linux-mtk"
+      name="linux-mtk-debian" />
+    <project remote="coral" path="packages/mtk-board-audio"
+      name="mtk-board-audio" />
+    <project remote="coral" path="packages/excelsior-wlan"
+      name="mt7668-wifi-mod-debian" />
+    <project remote="coral" path="packages/excelsior-bluetooth"
+      name="mt7668-bluetooth-mod-debian" />
+    <project remote="excelsior" path="packages/excelsior-connectivity-fw"
+      groups="notdefault,internal"
+      name="excelsior-mendel/packages/excelsior-connectivity-fw-7668" />
+    <project remote="excelsior" path="packages/excelsior-img-fw"
+      groups="notdefault,internal"
+      name="excelsior-mendel/packages/img-fw" />
+    <project remote="coral" path="packages/weston-mtk"
+      name="weston-mtk-debian" />
+    <project remote="excelsior" path="packages/excelsior-vpu-prebuilts"
+      groups="notdefault,internal"
+      name="excelsior-mendel/packages/vpu" />
+    <project remote="coral" path="packages/mtk-gstreamer"
+      name="mtk-gstreamer-debian" />
+    <project remote="coral" path="packages/mtk-gst-plugins-base"
+      name="mtk-gst-plugins-base-debian" />
+    <project remote="coral" path="packages/mtk-gst-plugins-bad"
+      name="mtk-gst-plugins-bad-debian" />
+    <project remote="coral" path="packages/mtk-gst-plugins-good"
+      name="mtk-gst-plugins-good-debian" />
+    <project remote="excelsior" path="packages/mdpd"
+      groups="notdefault,internal"
+      name="excelsior-mendel/packages/mdpd" />
+    <project remote="excelsior" path="packages/libmdp-prot"
+      groups="notdefault,internal"
+      name="excelsior-mendel/packages/libmdp_prot" />
+    <project remote="coral" path="packages/excelsior-tools"
+      name="excelsior-tools" />
+    <!-- END mtk packages repos -->
+
+
+    <!-- BEGIN closed source repositories -->
+    <project name="kokoro-excelsior" path="kokoro"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project remote="excelsior" path="graphics/mesa"
+      groups="notdefault,internal" name="excelsior-mendel/graphics/mesa"
+      revision="master"/>
+    <project remote="excelsior" path="packages/mesa-mtk"
+      groups="notdefault,internal" name="excelsior-mendel/packages/mesa-mtk-internal" />
+    <!-- END closed source repositories -->
+
+    <!-- Secure element repos -->
+    <project path="a71ch-crypto-support" name="a71ch-crypto-support"
+      remote="coral" />
+    <project path="packages/a71ch-crypto-support" name="a71ch-crypto-support-debian"
+      remote="coral" />
+    <!-- END Secure element repos -->
+
+    <!-- BEGIN edgetpu repos-->
+    <project remote="coral" path="packages/edgetpuvision"
+      name="edgetpuvision-mtk" />
+    <project remote="coral" path="packages/edgetpudemo"
+      name="edgetpudemo-mtk"/>
+    <!-- END edgetpu repos-->
+    <!-- END Dev Board Mini specfic repos -->
+</manifest>

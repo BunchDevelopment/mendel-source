@@ -1,0 +1,93 @@
+mendel-minimal (8-5) mendel-eagle; urgency=medium
+
+  * Add reboot script
+
+ -- Coral <coral-support@google.com>  Tue, 21 Sep 2021 12:08:11 -0800
+
+mendel-minimal (8-4) mendel-eagle; urgency=medium
+
+  * Allow non-root access to spidev nodes
+  * Add mendel user to render group
+
+ -- Coral <coral-support@google.com>  Thu, 03 Dec 2020 16:24:11 -0800
+
+mendel-minimal (8-3) mendel-day; urgency=medium
+
+  * Allow non-root access to GPIO and PWM sysfs nodes
+
+ -- Coral <coral-support@google.com>  Fri, 08 Nov 2019 15:00:08 -0600
+
+mendel-minimal (8-2) mendel-day; urgency=medium
+
+  * Add in the iptables runonce script to reduce problems with docker.
+
+ -- Coral <coral-support@google.com>  Tue, 15 Oct 2019 19:38:22 -0500
+
+mendel-minimal (8-1) mendel-day; urgency=medium
+
+  * Cut for day release
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:24:14 -0500
+
+mendel-minimal (7-1) mendel-chef; urgency=medium
+
+  * ssh: Disable password authentication by default
+  * check-ssh-keys: Disable challenge-response and root login
+  * profile: Set the default LANG var if it is unset
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+mendel-minimal (6-1) mendel-beaker; urgency=medium
+
+  * set-datetime: Make timesyncd behave in the face of broken time
+  * ssh: Disable password authentication
+  * profile: Set the LANG var based upon /etc/locale.conf if LANG is unset.
+
+ -- Coral <coral-support@google.com>  Tue, 26 Feb 2019 11:32:18 -0800
+
+mendel-minimal (6-1) mendel-beaker; urgency=medium
+
+  * Updates set-datetime to sync to the hardware clock using hwclock and sets
+    systemd-timesyncd's timestamp file to ensure persistence across reboots.
+
+ -- Coral <coral-support@google.com>  Thu, 21 Feb 2019 11:31:00 -0800
+
+mendel-minimal (5-1) mendel-beaker; urgency=medium
+
+  * Fixes set-datetime to stop timesyncd and restart it when
+    setting the time.
+
+ -- Coral <coral-support@google.com>  Mon, 28 Jan 2019 13:31:00 -0800
+
+mendel-minimal (4-1) mendel-beaker; urgency=medium
+
+  * Fixes the set-datetime runonce script to make use of timedatectl for
+    force write its timestamp to disk.
+
+ -- Coral <coral-support@google.com>  Mon, 28 Jan 2019 13:31:00 -0800
+
+mendel-minimal (3-1) mendel-beaker; urgency=medium
+
+  * Reverts the multistrap source lists change below.
+
+ -- Coral <coral-support@google.com>  Thu, 24 Jan 2019 17:13:00 -0800
+
+mendel-minimal (2-1) mendel-beaker; urgency=medium
+
+  * Collapes multistrap source lists into single file
+
+ -- Coral <coral-support@google.com>  Tue, 22 Jan 2019 13:13:27 -0800
+
+mendel-minimal (1-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+  * Add in a MAC address generation and storage script.
+  * Migrate runonce into its own package.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+mendel-minimal (0.1) animal; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Wed, 12 Sep 2018 16:14:00 -0800

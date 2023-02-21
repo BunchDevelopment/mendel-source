@@ -1,0 +1,29 @@
+imx-firmware (3-2) UNRELEASED; urgency=medium
+
+  * Add SDMA firmware
+
+ -- Coral <coral-support@google.com>  Mon, 24 Jun 2019 13:27:28 -0700
+
+imx-firmware (2-2) mendel-chef; urgency=medium
+
+  * Add support for IMX8MQ 2.1 silicon.
+
+ -- Coral <coral-support@google.com>  Thu, 28 Mar 2019 09:43:59 -0700
+
+imx-firmware (2-1) mendel-chef; urgency=medium
+
+  * Cut for chef release.
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-firmware (1-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+  
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-firmware (0.1) UNRELEASED; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 04 Jun 2018 16:14:00 -0800

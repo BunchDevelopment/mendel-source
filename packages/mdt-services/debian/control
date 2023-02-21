@@ -1,0 +1,20 @@
+Source: mdt-services
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: mdt-services
+Section: misc
+Priority: optional
+Architecture: all
+Depends: apt-utils, sudo, openssh-server, avahi-daemon, runonce, usb-gadget,
+ python3, python3-netifaces, ${misc:Depends}
+Description: Performs initial system setup work
+ This package contains scripts and configurations to support the Mendel
+ Development Tool.
+ .
+ There is no single daemon for MDT, just a bunch of configuration. Removing this
+ package will remove the configurations associated with it and effectively
+ disable the ability to use the MDT with this machine.

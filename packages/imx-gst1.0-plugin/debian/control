@@ -1,0 +1,30 @@
+Source: imx-gst1.0-plugin
+Priority: optional
+Maintainer: Coral <coral-support@google.com>
+Section: libs
+Build-Depends:
+ debhelper (>=10),
+ libdrm-imx-dev (>= 2.4.84+imx),
+ imx-vpu-hantro-dev (>= 1.11.0),
+ imx-vpuwrap-dev (>= 4.4.5),
+ libgstreamer1.0-dev (>= 1.14.4+imx),
+ libgstreamer-plugins-base1.0-dev (>= 1.14.4+imx),
+ libgstreamer-plugins-bad1.0-dev (>= 1.14.4+imx),
+ linux-headers-4.14.98-imx (>=1),
+Standards-Version: 4.1.1
+
+Package: imx-gst1.0-plugin
+Section: libs
+Architecture: arm64 armhf
+Priority: optional
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ imx-vpu-hantro (>= 1.11.0),
+ imx-vpuwrap (>= 4.4.5),
+ gstreamer1.0-plugins-base (>= 1.14.4+imx),
+ libgstreamer-plugins-base1.0-0 (>= 1.14.4+imx),
+ libgstreamer-plugins-bad1.0-0 (>= 1.14.4+imx),
+Description: IMX GStreamer plugin.
+ Gstreamer plugins with support for features
+ specific to the i.MX8 platform.

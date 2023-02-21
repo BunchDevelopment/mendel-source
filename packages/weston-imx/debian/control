@@ -1,0 +1,56 @@
+Source: weston-imx
+Section: x11
+Priority: optional
+Maintainer: Coral <coral-support@google.com>
+Build-Depends:
+ debhelper (>= 10),
+ quilt,
+ pkg-config,
+ libpixman-1-dev (>= 0.25.2),
+ libpng-dev,
+ libjpeg-dev,
+ libcolord-dev (>= 0.1.27),
+ mesa-common-dev,
+ libglu1-mesa-dev,
+ libegl1-mesa-dev (>= 9.0~),
+ libgles2-mesa-dev (>= 9.0~),
+ libwayland-dev (>= 1.11.91),
+ libxcb1-dev,
+ libxcb-composite0-dev,
+ libxcb-xfixes0-dev,
+ libxcb-xkb-dev,
+ libx11-xcb-dev,
+ libx11-dev,
+ libudev-dev (>= 136),
+ libgbm-dev (>= 10.2),
+ libxkbcommon-dev (>= 0.3.0),
+ libcairo2-dev (>= 1.10.0),
+ libpango1.0-dev,
+ libgdk-pixbuf2.0-dev,
+ libxcursor-dev,
+ libmtdev-dev,
+ libpam0g-dev,
+ libvpx-dev,
+ libsystemd-dev,
+ libinput-dev (>= 0.8.0),
+ libdbus-1-dev,
+ libdrm-imx-dev (>= 2.4.84+imx),
+ wayland-protocols (>= 1.8),
+Standards-Version: 4.1.1
+
+Package: weston-imx
+Section: libdevel
+Architecture: any
+Priority: optional
+Depends:
+ imx-gpu-viv,
+ libinput10,
+ libxcb-shape0,
+ libxcb-composite0,
+ ${shlibs:Depends},
+ ${misc:Depends}
+Provides: weston
+Conflicts: weston
+Description: Weston compositor w/ IMX support.
+ Patched version of Weston compositor, with
+ extra support for the IMX platform.

@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+%:
+	dh $@ --with systemd
+
+override_dh_strip:
+	true
+
+override_dh_auto_install:
+	install -d debian/imx-firmware/usr/share/imx-firmware/imx8m
+	install -m 644 -o 0 -g 0 -t debian/imx-firmware/usr/share/imx-firmware/imx8m imx8m/*
+	install -d debian/imx-firmware/usr/share/imx-firmware/imx8mm
+	install -m 644 -o 0 -g 0 -t debian/imx-firmware/usr/share/imx-firmware/imx8mm imx8mm/*
+	chmod +x debian/imx-firmware/usr/share/imx-firmware/imx8m/mkimage_imx8
+	chmod +x debian/imx-firmware/usr/share/imx-firmware/imx8mm/mkimage_imx8
+	install -d debian/imx-firmware/lib/firmware
+	install -m 644 -o 0 -g 0 -t debian/imx-firmware/lib/firmware nvm_tlv_3.2.bin
+	ln -s qca/rampatch_00130302.bin debian/imx-firmware/lib/firmware/rampatch_tlv_3.2.tlv
+	install -d debian/imx-firmware/lib/firmware/imx/sdma
+	install -m 644 -o 0 -g 0 -t debian/imx-firmware/lib/firmware/imx/sdma imx/sdma/*
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=btfw_loader
+
+override_dh_systemd_start:
+	dh_systemd_start --no-start

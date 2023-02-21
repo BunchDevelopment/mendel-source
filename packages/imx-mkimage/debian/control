@@ -1,0 +1,15 @@
+Source: imx-mkimage
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: imx-mkimage
+Section: misc
+Priority: optional
+Architecture: any
+Depends: ${misc:Depends}
+Description: Tools to create bootloader images for i.MX8
+ Various scripts used to stitch together multiple boot firmwares
+ for the i.MX8 platform.

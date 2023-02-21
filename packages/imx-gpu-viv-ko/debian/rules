@@ -1,0 +1,64 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+CFLAGS := -D_FILE_OFFSET_BITS=64
+LDFLAGS := -z relro
+OUTDIR := out
+DESTDIR := debian/imx-gpu-viv-ko
+
+MAKEOPTS := \
+	CROSS_COMPILE=$(DEB_HOST_GNU_TYPE)- \
+	VIVANTE_ENABLE_DRM=1 \
+	SOC_PLATFORM=freescale-imx \
+	USE_BANK_ALIGNMENT=1 \
+	BANK_BIT_START=13 \
+	BANK_BIT_END=15 \
+	BANK_CHANNEL_BIT=12 \
+	ENABLE_GPU_CLOCK_BY_DRIVER=0 \
+	AQROOT=$(shell pwd) \
+	SDK_DIR=$(shell pwd)/debian/$(OUTDIR) \
+	-j$(nproc)
+
+MAKEOPTS_arm64 := \
+	CPU_TYPE=cortex-a53 \
+	CPU_ARCH=armv8-a \
+	ARCH_TYPE=arm64 \
+	ABI=lp64
+
+MAKEOPTS_armhf += \
+	CPU_TYPE=cortex-a9 \
+	CPU_ARCH=armv7-a \
+	ARCH_TYPE=arm \
+	ABI=aapcs-linux
+
+ifeq ($(DEB_TARGET_ARCH),arm64)
+MAKEOPTS += $(MAKEOPTS_arm64)
+endif
+
+ifeq ($(DEB_TARGET_ARCH),armhf)
+MAKEOPTS += $(MAKEOPTS_armhf)
+endif
+
+KERNEL_MAKEOPTS := \
+	CROSS_COMPILE=aarch64-linux-gnu- \
+	KERNEL_DIR=/usr/src/linux-headers-4.14.98-imx
+
+%:
+	dh $@
+
+override_dh_strip:
+override_dh_shlibdeps:
+	true
+
+override_dh_auto_build:
+	# We're building and installing in one run, and we can't use debian/tmp as
+	# that's cleaned between dh_auto_build and dh_auto_install. So we build and
+	# install to debian/$(OUTDIR) where $(OUTDIR) can't be 'tmp'.
+	make -f Kbuild M=. $(MAKEOPTS) $(KERNEL_MAKEOPTS) install
+
+override_dh_auto_install:
+	install -d $(DESTDIR)/lib/modules/4.14.98-imx/kernel/extra
+	install -g 0 -o 0 debian/$(OUTDIR)/drivers/galcore.ko $(DESTDIR)/lib/modules/4.14.98-imx/kernel/extra/

@@ -1,0 +1,44 @@
+Source: libdrm-imx
+Priority: optional
+Maintainer: Coral <coral-support@google.com>
+Build-Depends:
+ debhelper (>= 10),
+ quilt,
+ pkg-config,
+ xutils-dev (>= 1:7.6+2),
+ libdrm-dev (>= 2.4.74),
+Standards-Version: 4.0.0
+Section: libs
+
+Package: libdrm-imx-dev
+Section: libdevel
+Architecture: arm64 armhf
+Depends:
+ libdrm-vivante (= ${binary:Version}) [${Arch}],
+ libdrm-libkms (= ${binary:Version}) [${Arch}],
+ libdrm-dev (>= 2.4.74),
+ ${misc:Depends},
+Multi-Arch: same
+Description: imx specific libdrm development headers.
+ C headers for IMX-specific libdrm extensions.
+
+Package: libdrm-vivante
+Architecture: arm64 armhf
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: Vivante libdrm extensions.
+ Extensions to libdrm to support the Vivante GPU
+ in i.MX8.
+
+Package: libdrm-libkms
+Architecture: arm64 armhf
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: libdrm's libkms library
+ libdrm's libkms with patches for i.MX8.

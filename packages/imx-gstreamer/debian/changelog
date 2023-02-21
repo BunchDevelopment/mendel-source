@@ -1,0 +1,23 @@
+imx-gstreamer (1.14.4+imx-3) mendel-day; urgency=medium
+
+  * Update to 1.14.4
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:23:08 -0500
+
+imx-gstreamer (1.12.2+imx-2) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-gstreamer (1.12.2+imx-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker branch
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-gstreamer (1.12.2+imx-0) unstable; urgency=medium
+
+  * Initial release
+
+ -- Coral <coral-support@google.com>  Wed, 04 Jul 2018 10:45:53 -0800

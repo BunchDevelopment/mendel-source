@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+%:
+	dh $@ --with systemd
+
+override_dh_systemd_enable:
+	dh_systemd_enable --name=mdt-keymaster
+
+override_dh_systemd_start:
+	dh_systemd_start --restart-after-upgrade mdt-keymaster.service
+	dh_systemd_start --restart-after-upgrade mdt-keymaster.path

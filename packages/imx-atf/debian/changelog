@@ -1,0 +1,47 @@
+imx-atf (4-3) mendel-day; urgency=medium
+
+  * Update DDRC configuration for micron 1Gb boards.
+
+ -- Coral <coral-support@google.com>  Mon, 16 Dec 2019 15:19:49 -0800
+
+imx-atf (4-2) mendel-day; urgency=medium
+
+  * Enable USB wakeup support.
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 10:31:57 -0700
+
+imx-atf (4-1) mendel-day; urgency=medium
+
+  * Bump to update to the new upstream branch.
+
+ -- Coral <coral-support@google.com>  Thu, 10 Oct 2019 15:10:10 -0500
+
+imx-atf (3-1) mendel-day; urgency=medium
+
+  * Cut for day release.
+
+ -- Coral <coral-support@google.com>  Tue, 08 Oct 2019 15:10:10 -0500
+
+imx-atf (2-2) mendel-chef; urgency=medium
+
+  * Add support for IMX8MQ 2.1 silicon.
+
+ -- Coral <coral-support@google.com>  Wed, 27 Mar 2019 16:11:50 -0700
+
+imx-atf (2-1) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-atf (1-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-atf (0.1) UNRELEASED; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 04 Jun 2018 16:14:00 -0800

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+OUT_DIR := debian/imx-mkimage
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+override_dh_auto_build:
+override_dh_auto_test:
+	true
+
+override_dh_auto_install:
+	install -d $(OUT_DIR)/usr/bin
+	install -m 755 -o 0 -g 0 -t $(OUT_DIR)/usr/bin/ iMX8M/*.sh

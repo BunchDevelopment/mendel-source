@@ -1,0 +1,17 @@
+meta-mendel (2-1) mendel-day; urgency=medium
+
+  * Cut for day release.
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:24:26 -0500
+
+meta-mendel (1-1) mendel-chef; urgency=medium
+
+  * Lintian cleanups.
+
+ -- Coral <coral-support@google.com>  Thu, 04 Apr 2019 15:21:00 -0800
+
+meta-mendel (1-0) mendel-chef; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 18 Mar 2019 16:14:00 -0800

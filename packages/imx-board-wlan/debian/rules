@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+DESTDIR := $(shell pwd)/debian/imx-board-wlan
+LDFLAGS := -z relro
+KERNEL_VER := 4.14.98-imx
+
+KERNEL_MAKEOPTS := \
+	CROSS_COMPILE=aarch64-linux-gnu- \
+	KERNEL_SRC=/lib/modules/$(KERNEL_VER)/build \
+	ARCH=arm64 \
+	INSTALL_MOD_PATH=$(DESTDIR)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	true
+
+override_dh_auto_build:
+	make $(KERNEL_MAKEOPTS) -j$(shell nproc)
+
+override_dh_auto_install:
+	make $(KERNEL_MAKEOPTS) modules_install
+	install -d $(DESTDIR)/lib/firmware
+	cp -r debian/firmware/* $(DESTDIR)/lib/firmware
+	install -d $(DESTDIR)/etc/runonce.d
+	cp debian/10-set-mac-addresses $(DESTDIR)/etc/runonce.d
+	install -d $(DESTDIR)/etc/
+	cp -r debian/NetworkManager $(DESTDIR)/etc

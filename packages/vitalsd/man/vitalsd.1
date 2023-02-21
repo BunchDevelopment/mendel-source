@@ -1,0 +1,19 @@
+.TH VITALSD "1" "December 2018" "MDT" "User Commands"
+.SH NAME
+vitalsd \- daemon to monitor vital system statistics
+.SH SYNOPSIS
+.B vitalsd
+.SH DESCRIPTION
+.PP
+vitalsd is a very simple tool that samples vital system statistics (CPU load,
+free/total memory, temperatures, etc.) and outputs them periodically to a serial
+port. It's designed to be used on embedded systems with physical serial ports
+that can crash in unexpected ways that leave the system in a non-triageable
+state.
+.SH AUTHOR
+Written by June Tate-Gans.
+.SH "REPORTING BUGS"
+Contact Coral support at <coral-support@google.com>
+.SH COPYRIGHT
+Copyright \(co 2018 Google, Inc.
+License Apache 2.0.

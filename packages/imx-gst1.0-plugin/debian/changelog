@@ -1,0 +1,37 @@
+imx-gst1.0-plugin (4.4.5-5) UNRELEASED; urgency=medium
+
+  * Update to 4.4.5
+
+ -- Coral <coral-support@google.com>  Thu, 06 Jun 2019 10:32:12 -0700
+
+imx-gst1.0-plugin (4.3.4-4) mendel-chef; urgency=medium
+
+  * Never re-allocate buffer pool if caps haven't changed.
+  * Reduce default number of extra decoder output buffers from 3 to 0.
+  * Fix cropping support to work like rest of GStreamer
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-gst1.0-plugin (4.3.4-3) mendel-beaker; urgency=medium
+
+  * Require vpudec jpeg input to be parsed.
+
+ -- Coral <coral-support@google.com>  Wed, 06 Feb 2019 14:57:42 -0800
+
+imx-gst1.0-plugin (4.3.4-2) mendel-beaker; urgency=medium
+
+  * Use the correct linux-image version number.
+
+ -- Coral <coral-support@google.com>  Wed, 30 Jan 2019 12:00:00 -0800
+
+imx-gst1.0-plugin (4.3.4-1) mendel-beaker; urgency=medium
+
+  * Cut branch for beaker
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-gst1.0-plugin (4.3.4-0) unstable; urgency=medium
+
+  * Initial release
+
+ -- Coral <coral-support@google.com>  Wed, 04 Jul 2018 10:45:53 -0800

@@ -1,0 +1,22 @@
+mdt-services (3) mendel-day; urgency=medium
+
+  * Create a simple bug reporting script to gather system information.
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:23:50 -0500
+
+mdt-services (2) mendel-chef; urgency=medium
+
+  * Install mdt-keymaster service for pushing keys
+  * Adjusting the mdt avahi service to advertise correctly.
+  * Fixing the MDT servicename to match RFC requirements.
+  * Making mdt-install-package only update the local repository.
+  * Make mdt-install-package not prompt for confirmation.
+  * mdt-keymaster: Don't crash out when an IPv4 address isn't available
+
+ -- Coral <coral-support@google.com>  Tue, 05 Feb 2019 11:12:41 -0800
+
+mdt-services (1) mendel-beaker; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 14 Jan 2019 12:01:41 -0800

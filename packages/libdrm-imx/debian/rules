@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export DEB_CFLAGS_MAINT_APPEND = -DMAJOR_IN_SYSMACROS=1
+
+override_dh_auto_configure:
+	dh_auto_configure -- --enable-static=yes
+
+override_dh_install:
+	find debian/tmp -name '*.la' -delete
+	rm -rf debian/tmp/usr/share/libdrm
+	mkdir -p debian/tmp/usr/include/libdrm
+	cp include/drm/imx_drm.h debian/tmp/usr/include/libdrm
+	cp include/drm/drm_mode_imx.h debian/tmp/usr/include/libdrm
+	cp include/drm/drm_fourcc_imx.h debian/tmp/usr/include/libdrm
+	dh_install --fail-missing
+
+%:
+	dh $@ --with quilt --builddirectory=build/

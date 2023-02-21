@@ -1,0 +1,24 @@
+Source: wayland-protocols-imx
+Section: x11
+Priority: optional
+Maintainer: Coral <coral-support@google.com>
+Build-Depends:
+ debhelper (>=10),
+ libwayland-dev,
+ pkg-config
+Standards-Version: 4.1.1
+Homepage: http://wayland.freedesktop.org/
+
+Package: wayland-protocols
+Section: libdevel
+Architecture: all
+Priority: optional
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends}
+Multi-Arch: foreign
+Description: wayland compositor protocols
+ Wayland protocols that add functionality not available in the Wayland core
+ protocol. Such protocols either add completely new functionality, or extend
+ the functionality of some other protocol either in Wayland core, or some other
+ protocol in wayland-protocols.

@@ -1,0 +1,26 @@
+Source: vitalsd
+Section: python
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10),
+               dh-python,
+               python3-all-dev,
+               python3-setuptools
+Priority: optional
+Vcs-Git: https://coral.googlesource.com/vitalsd
+Standards-Version: 3.9.8
+
+Package: vitalsd
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         python3-serial
+Description: Monitor for vital statistics
+ vitalsd is a very simple tool that samples vital
+ system statistics (CPU load, free/total memory,
+ temperatures, etc.) and outputs them periodically
+ to a serial port. It's designed to be used on
+ embedded systems with physical serial ports
+ that can crash in unexpected ways that leave the
+ system in a non-triageable state.

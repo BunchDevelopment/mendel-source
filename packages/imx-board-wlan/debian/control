@@ -1,0 +1,15 @@
+Source: imx-board-wlan
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10), linux-headers-4.14.98-imx, linux-kbuild-4.14.98-imx
+Section: net
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: imx-board-wlan
+Section: net
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}, python
+Description: Additional configuration for Coral Edge TPU Board wireless networking
+ Service descriptions and NetworkManager configuration
+ for WiFi on the Edge TPU Board.

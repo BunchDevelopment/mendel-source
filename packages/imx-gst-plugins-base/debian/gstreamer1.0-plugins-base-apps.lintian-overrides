@@ -1,0 +1,2 @@
+gstreamer1.0-plugins-base-apps: spelling-error-in-readme-debian *
+gstreamer1.0-plugins-base-apps: manpage-has-errors-from-man usr/share/man/*

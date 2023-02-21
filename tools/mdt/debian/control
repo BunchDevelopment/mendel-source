@@ -1,0 +1,28 @@
+Source: mendel-development-tool
+Section: python
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper,
+               dh-python,
+               python3-all-dev,
+               python3-setuptools
+Priority: optional
+Vcs-Git: https://coral.googlesource.com/mdt
+X-Python3-Version: >= 3.5
+
+Package: mendel-development-tool
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ${python3:Depends},
+         ${misc:Depends},
+         python3-zeroconf,
+         python3-paramiko
+Description: simple tool to work with single board computers running Mendel Linux
+ MDT is a simple tool to aid in working with single board computers that the
+ Mendel Linux distribution runs on. It consists of a whole bunch of
+ pre-existing open source tooling, coupled with some simple wrappers written in
+ python to ease their use.
+ .
+ It also provides an easy way to interact with these boards without having to
+ fight with serial consoles, IP addresses, and other fiddly bits, reducing
+ barrier to entry when working with these boards.

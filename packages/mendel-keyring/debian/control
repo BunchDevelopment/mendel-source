@@ -1,0 +1,15 @@
+Source: mendel-keyring
+Section: misc
+Priority: optional
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10), gnupg
+Standards-Version: 3.9.8
+
+Package: mendel-keyring
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}
+Description: Public keys to verify packages for the Mendel OS
+ Keys used by Aptitude to verify packages from the Mendel
+ Apt package repositories.

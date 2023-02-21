@@ -1,0 +1,31 @@
+Source: uboot-imx
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: bc,
+               debhelper (>=10),
+               device-tree-compiler,
+               gcc-aarch64-linux-gnu,
+               imx-atf,
+               imx-firmware:all,
+               imx-mkimage,
+	       bison,
+	       flex
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: uboot-imx
+Section: misc
+Priority: optional
+Architecture: arm64 armhf
+Depends: ${misc:Depends}
+Description: U-Boot for the Coral Edge TPU Dev Board
+ u-boot bootloader for the i.MX8 processor of the Edge
+ TPU dev board.
+
+Package: uboot-mkimage
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}
+Description: mkimage tool from uboot
+ Tool to convert images into u-boot's format.

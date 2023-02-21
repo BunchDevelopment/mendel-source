@@ -1,0 +1,3 @@
+reboot-bootloader /usr/sbin/
+pinout /usr/bin/
+snapshot /usr/bin/

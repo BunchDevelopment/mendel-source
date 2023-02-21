@@ -1,0 +1,36 @@
+imx-board-wlan (4-2) mendel-day; urgency=medium
+
+  * Stop filtering out DVT MAC addresses.
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 15:44:25 -0500
+
+imx-board-wlan (4-1) mendel-day; urgency=medium
+
+  * Build qcacld-2.0 module out of tree
+  * Restructure package a bit
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:22:24 -0500
+
+imx-board-wlan (3-1) mendel-chef; urgency=medium
+
+  * Fix to the MAC address vendor script.
+
+ -- Coral <coral-support@google.com>  Tue, 09 Jul 2019 17:08:25 -0700
+
+imx-board-wlan (2-1) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-board-wlan (1-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-board-wlan (0.1) UNRELEASED; urgency=medium
+
+  * Initial release.
+
+ -- Coral <support-aiy@google.com>  Mon, 04 Jun 2018 16:14:00 -0800

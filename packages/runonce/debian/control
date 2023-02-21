@@ -1,0 +1,21 @@
+Source: runonce
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: runonce
+Section: misc
+Priority: optional
+Architecture: all
+Depends: ${misc:Depends}
+Description: Performs initial system setup work
+ This package contains the initial "run once" systemd service that performs
+ initial startup work such as resizing the root filesystem to match the emmc
+ size, adding in known users, enabling services that users will likely want by
+ default, and other housekeeping behaviors (such as forcing a regeneration of
+ ssh host keys).
+ .
+ This package is mostly empty, save for the runonce systemd service, so
+ removing it should have little effect on a running system.

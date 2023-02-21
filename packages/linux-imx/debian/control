@@ -1,0 +1,40 @@
+Source: linux-imx
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: bc,
+               cpio,
+               debhelper (>=10),
+               gcc-aarch64-linux-gnu,
+               kmod,
+               libssl-dev,
+               python3
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: linux-image-4.14.98-imx
+Section: misc
+Priority: optional
+Architecture: arm64 armhf
+Provides: linux-image
+Depends: kmod, imx-firmware (>=3-2), ${misc:Depends}
+Description: Linux kernel image for the Coral EdgeTPU Dev Board
+ Linux Image, modules, System map, config, and device tree blobs for
+ the Edge TPU Dev board.
+
+Package: linux-headers-4.14.98-imx
+Section: misc
+Priority: optional
+Architecture: arm64 armhf
+Provides: linux-headers
+Depends: ${misc:Depends},
+         linux-kbuild-4.14.98-imx [${Arch}]
+Description: Linux kernel headers fro the Coral EdgeTPU Dev Board
+ Kernel and userspace headers for the 4.14.98-imx Linux kernel.
+
+Package: linux-kbuild-4.14.98-imx
+Section: misc
+Priority: optional
+Architecture: arm64 armhf
+Depends: ${misc:Depends}, ${perl:Depends}, ${shlibs:Depends}
+Description: Linux kernel build tools for the Coral EdgeTPU Dev Board
+ Support tools for building modules against the 4.14.98-imx Linux kernel.

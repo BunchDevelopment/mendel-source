@@ -1,0 +1,14 @@
+Source: imx-firmware
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>=10)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: imx-firmware
+Section: misc
+Priority: optional
+Depends: firmware-atheros, ${misc:Depends}
+Architecture: all
+Description: Binary firmwares required for i.MX8
+ Wireless and DDR training firmwares for i.MX8

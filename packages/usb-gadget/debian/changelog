@@ -1,0 +1,29 @@
+usb-gadget (3-2) mendel-eagle; urgency=medium
+
+  * Select USB PID based on kernel version.
+
+ -- Coral <coral-support@google.com>  Wed, 09 Dec 2020 15:54:44 -0800
+
+usb-gadget (3-1) mendel-day; urgency=medium
+
+  * Prevent ttyGS0 from timing out and filling the logs with noise
+
+ -- Coral <coral-support@google.com>  Tue, 22 Oct 2019 15:45:38 -0500
+
+usb-gadget (2-1) mendel-day; urgency=medium
+
+  * Cut for day release
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:25:05 -0500
+
+usb-gadget (1-1) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+usb-gadget (0.0.1-1) mendel-beaker; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Wed, 25 Jul 2018 23:28:51 +0000

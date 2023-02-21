@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+    <!-- BEGIN mendel.xml -->
+    <!--
+      Copied in on 10/21/2019, when projects from here no longer require a fork,
+      revert to including mendel.xml.
+    -->
+    <remote fetch="https://coral.googlesource.com" name="coral"
+      review="https://coral-review.googlesource.com" />
+    <remote fetch="sso://aiyprojects" name="coral-internal"
+      review="sso://aiyprojects" />
+
+    <default remote="coral" revision="master" />
+
+    <project name="manifest" path="manifest" />
+
+    <project name="docs" path="docs">
+      <linkfile src="GettingStarted.md" dest="GettingStarted.md" />
+    </project>
+
+    <!-- BEGIN Build system -->
+    <project name="build" path="build" >
+      <linkfile src="Makefile" dest="Makefile" />
+    </project>
+    <!-- END Build system -->
+
+   <!-- BEGIN Misc Tools repos -->
+    <project path="tools/bpt" name="bpt" />
+    <project path="tools/img2simg" name="img2simg" />
+    <project path="tools/mdt" name="mdt" />
+    <project path="tools/busybox" name="busybox" />
+    <!-- END Misc Tools repos -->
+
+    <!-- BEGIN Package repos -->
+    <project path="packages/base-files" name="base-files" />
+    <project path="packages/mdt-services" name="mdt-services" />
+    <project path="packages/mendel-distro-info-data" name="mendel-distro-info-data" />
+    <project path="packages/mendel-keyring" name="mendel-keyring" />
+    <project path="packages/mendel-minimal" name="mendel-minimal" />
+    <project path="packages/meta-mendel" name="meta-mendel" />
+    <project path="packages/runonce" name="runonce" />
+    <project path="packages/usb-gadget" name="usb-gadget" />
+    <project path="packages/vitalsd" name="vitalsd" />
+    <!-- END Package repos -->
+    <!-- END mendel.xml -->
+
+    <!-- BEGIN prebuilts -->
+    <project path="prebuilts" name="prebuilts" />
+    <!-- END prebuilts -->
+
+    <!-- BEGIN imx specific build tools -->
+    <project path="tools/imx-mkimage" name="imx-mkimage" revision="rel_imx_4.19.35_1.0.0" />
+    <project path="packages/imx-mkimage" name="imx-mkimage-debian" />
+    <!-- END imx specific build tools -->
+
+    <!-- BEGIN imx BSP build config -->
+    <project name="board-columbia" path="board" />
+    <!-- END imx BSP build config -->
+
+    <!-- BEGIN imx bootloader -->
+    <project name="uboot-imx" path="uboot-imx" revision="imx_v2019.04_4.19.35_1.0.0" />
+    <project name="uboot-imx-debian" path="packages/uboot-imx" revision="imx_v2019.04_4.19.35_1.0.0" />
+    <!-- END imx bootloader -->
+
+    <!-- BEGIN imx linux -->
+    <project name="linux-imx" path="linux-imx"  />
+    <project name="linux-imx-debian" path="packages/linux-imx" />
+    <!-- END imx linux -->
+
+    <project name="libdrm-imx" path="libdrm-imx" />
+    <project name="libdrm-imx-debian" path="packages/libdrm-imx" />
+    <project name="imx-firmware" path="imx-firmware" />
+    <project name="imx-firmware-debian" path="packages/imx-firmware" revision="columbia" />
+
+    <project name="imx-atf" path="imx-atf" revision="imx_4.9.123_imx8mm_ga" />
+    <project name="imx-atf-debian" path="packages/imx-atf" />
+
+    <project path="imx-gstreamer" name="imx-gstreamer" />
+    <project path="imx-gst-plugins-base" name="imx-gst-plugins-base" />
+    <project path="imx-gst-plugins-good" name="imx-gst-plugins-good" />
+    <project path="imx-gst-plugins-bad" name="imx-gst-plugins-bad" />
+    <project path="imx-gst1.0-plugin" name="imx-gst1.0-plugin" />
+    <project path="packages/imx-board-tools" name="imx-board-tools" revision="columbia" />
+    <project path="packages/imx-gstreamer" name="imx-gstreamer-debian" />
+    <project path="packages/imx-gst-plugins-base" name="imx-gst-plugins-base-debian" />
+    <project path="packages/imx-gst-plugins-good" name="imx-gst-plugins-good-debian" />
+    <project path="packages/imx-gst-plugins-bad" name="imx-gst-plugins-bad-debian" />
+    <project path="packages/imx-gst1.0-plugin" name="imx-gst1.0-plugin-debian" />
+
+    <project path="wayland-protocols-imx" name="wayland-protocols-imx" />
+    <project path="packages/wayland-protocols-imx" name="wayland-protocols-imx-debian" />
+
+    <project path="weston-imx" name="weston-imx" />
+    <project path="packages/weston-imx" name="weston-imx-debian" />
+
+    <project path="bluez-imx" name="bluez-imx" />
+    <project path="packages/bluez-imx" name="bluez-imx-debian" />
+
+    <project path="packages/edgetpuvision" name="edgetpuvision" />
+    <project path="packages/edgetpudemo" name="edgetpudemo" />
+
+    <project path="packages/imx-board-audio" name="imx-board-audio" />
+
+    <project path="packages/meta-columbia" name="meta-columbia" />
+    <!-- END imx specific repos -->
+
+    <project path="a71ch-crypto-support" name="a71ch-crypto-support"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project path="packages/a71ch-crypto-support" name="a71ch-crypto-support-package"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <!-- BEGIN closed source repositories -->
+    <project name="imx-gpu-viv" path="imx-gpu-viv" revision="source"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project name="imx-gpu-viv-debian" path="packages/imx-gpu-viv"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <project name="imx-vpu-hantro" path="imx-vpu-hantro"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project name="imx-vpu-hantro-debian" path="packages/imx-vpu-hantro"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <project name="imx-vpuwrap" path="imx-vpuwrap"
+      groups="notdefault,internal" remote="coral-internal" />
+    <project name="imx-vpuwrap-debian" path="packages/imx-vpuwrap"
+      groups="notdefault,internal" remote="coral-internal" />
+
+    <project name="kokoro-columbia" path="kokoro"
+      groups="notdefault,internal" remote="coral-internal" />
+    <!-- END closed source repositories -->
+</manifest>

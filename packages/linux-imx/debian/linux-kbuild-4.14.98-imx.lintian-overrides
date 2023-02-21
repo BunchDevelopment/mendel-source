@@ -1,0 +1,8 @@
+linux-kbuild-4.14.98-imx: wrong-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/ver_linux (#!/bin/awk != /usr/bin/awk)
+linux-kbuild-4.14.98-imx: incorrect-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/checkincludes.pl (#!/usr/bin/env perl != /usr/bin/perl)
+linux-kbuild-4.14.98-imx: incorrect-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/checkstack.pl (#!/usr/bin/env perl != /usr/bin/perl)
+linux-kbuild-4.14.98-imx: incorrect-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/checkversion.pl (#!/usr/bin/env perl != /usr/bin/perl)
+linux-kbuild-4.14.98-imx: incorrect-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/kernel-doc (#!/usr/bin/env perl != /usr/bin/perl)
+linux-kbuild-4.14.98-imx: incorrect-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/namespace.pl (#!/usr/bin/env perl != /usr/bin/perl)
+linux-kbuild-4.14.98-imx: incorrect-path-for-interpreter usr/lib/linux-kbuild-4.14.98-imx/scripts/recordmcount.pl (#!/usr/bin/env perl != /usr/bin/perl)
+

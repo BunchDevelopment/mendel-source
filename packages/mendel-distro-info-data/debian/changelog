@@ -1,0 +1,25 @@
+mendel-distro-info-data (4-1) mendel-eagle; urgency=medium
+
+  * Cut for the eagle release.
+
+ -- Coral <coral-support@google.com>  Mon, 13 Jul 2020 17:01:30 -0500
+
+mendel-distro-info-data (3-1) mendel-day; urgency=medium
+
+  * Cut for day release.
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:23:54 -0500
+
+mendel-distro-info-data (2-1) mendel-chef; urgency=medium
+
+  * Add Chef to the Mendel distro entries
+  * Set EOL date for Beaker
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+mendel-distro-info-data (1-1) mendel-beaker; urgency=medium
+
+  * Initial release.
+  * Update the releases list to include beaker.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800

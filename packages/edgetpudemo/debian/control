@@ -1,0 +1,17 @@
+Source: edgetpudemo
+Maintainer: Coral <coral-support@google.com>
+Build-Depends: debhelper (>= 9)
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+Homepage: https://coral.ai/
+
+Package: edgetpudemo
+Architecture: all
+Section: misc
+Priority: optional
+Depends: ${misc:Depends},
+         python3-edgetpuvision
+Description: Edge TPU demo script
+ Script to demonstrate TPU vs CPU performance.
+

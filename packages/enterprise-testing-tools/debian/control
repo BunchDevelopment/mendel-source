@@ -1,0 +1,25 @@
+Source: enterprise-testing-tools
+Maintainer: Coral <coral-support@google.com>
+Build-Depends:
+    debhelper (>=10),
+    gcc-aarch64-linux-gnu,
+    libwayland-dev,
+    mesa-common-dev,
+    libgles2-mesa-dev,
+    imx-gpu-viv (>=6.4.2),
+    opencl-headers
+Section: misc
+Priority: optional
+Standards-Version: 3.9.8
+
+Package: enterprise-testing-tools
+Section: misc
+Priority: optional
+Architecture: arm64 armhf
+Depends:
+    ${misc:Depends},
+    ${shlibs:Depends},
+    imx-gpu-viv,
+    pocl-opencl-icd
+Description: OpenGL Demo apps
+ Native apps for demo and testing of system s/w libs

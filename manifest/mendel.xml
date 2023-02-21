@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote fetch="https://coral.googlesource.com" name="coral"
+      review="https://coral-review.googlesource.com" />
+    <remote fetch="sso://aiyprojects" name="coral-internal"
+      review="sso://aiyprojects" />
+
+    <default remote="coral" revision="master" />
+
+    <project name="gke-jenkins" path="gke-jenkins"
+      groups="notdefault,cicd" revision="master" />
+    <project name="manifest" path="manifest" />
+
+    <project name="docs" path="docs">
+      <linkfile src="GettingStarted.md" dest="GettingStarted.md" />
+    </project>
+
+    <!-- BEGIN Build system -->
+    <project name="build" path="build">
+      <linkfile src="Makefile" dest="Makefile" />
+    </project>
+    <project name="releases" path="releases" revision="master" />
+    <!-- END Build system -->
+
+   <!-- BEGIN Misc Tools repos -->
+    <project path="tools/bpt" name="bpt" />
+    <project path="tools/img2simg" name="img2simg" />
+    <project path="tools/mdt" name="mdt" />
+    <project path="tools/busybox" name="busybox" />
+    <!-- END Misc Tools repos -->
+
+    <!-- BEGIN Package repos -->
+    <project path="packages/base-files" name="base-files" />
+    <project path="packages/mdt-services" name="mdt-services" />
+    <project path="packages/mendel-distro-info-data" name="mendel-distro-info-data" />
+    <project path="packages/mendel-keyring" name="mendel-keyring" />
+    <project path="packages/mendel-minimal" name="mendel-minimal" />
+    <project path="packages/meta-mendel" name="meta-mendel" />
+    <project path="packages/runonce" name="runonce" />
+    <project path="packages/usb-gadget" name="usb-gadget" />
+    <project path="packages/vitalsd" name="vitalsd" />
+    <!-- END Package repos -->
+</manifest>

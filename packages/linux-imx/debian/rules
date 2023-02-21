@@ -1,0 +1,94 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+VERSION := 4.14.98-imx
+
+ARCH := arm64
+
+DTBS := \
+	freescale/fsl-imx8mm-columbia.dtb \
+	freescale/fsl-imx8mq-phanbell.dtb \
+	freescale/fsl-imx8mq-yorktown.dtb
+DTBS := $(addprefix arch/$(ARCH)/boot/dts/,$(DTBS))
+
+KERNEL_OPTIONS := \
+	ARCH=arm64 \
+	CROSS_COMPILE=aarch64-linux-gnu- \
+	LOCALVERSION=-imx
+
+LDFLAGS :=
+BUILD_DIR := $(CURDIR)/debian/build
+DESTDIR := $(CURDIR)/debian/linux-image-$(VERSION)
+DESTDIR_HEADERS := $(CURDIR)/debian/linux-headers-$(VERSION)
+DESTDIR_KBUILD := $(CURDIR)/debian/linux-kbuild-$(VERSION)
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	true
+
+override_dh_auto_build:
+	+make $(KERNEL_OPTIONS) defconfig
+	cat debian/defconfig | tee -a .config
+	+make $(KERNEL_OPTIONS) olddefconfig
+	+make $(KERNEL_OPTIONS) -j$(shell nproc) Image modules dtbs
+
+override_dh_auto_install:
+	+make $(KERNEL_OPTIONS) INSTALL_MOD_PATH=$(DESTDIR) modules_install
+	rm -f $(DESTDIR)/lib/modules/$(VERSION)/build
+	rm -f $(DESTDIR)/lib/modules/$(VERSION)/source
+
+	# Setup contents of /boot
+	install -d $(DESTDIR)/boot
+	cp arch/$(ARCH)/boot/Image $(DESTDIR)/boot/vmlinuz-$(VERSION)
+	ln -sf vmlinuz-$(VERSION) $(DESTDIR)/boot/Image
+	cp System.map $(DESTDIR)/boot/System.map-$(VERSION)
+	cp .config $(DESTDIR)/boot/config-$(VERSION)
+	cp $(DTBS) $(DESTDIR)/boot
+	cp arch/$(ARCH)/boot/dts/freescale/fsl-imx8mq-phanbell-m4.dtb $(DESTDIR)/boot/fsl-imx8mq-phanbell-m4.dtbo
+
+	# Build header directory structure
+	install -d $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)
+	install -d $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/arch/arm
+	install -d $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/arch/$(ARCH)/kernel
+	install -d $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/drivers/staging/android
+
+	# Copy module information, include files, and important Makefiles into the header tree
+	cp -a .config $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)
+	cp -a Module.symvers $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)
+	cp -a include $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)
+	cp -a drivers/staging/android/uapi $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/drivers/staging/android
+	cp -a arch/$(ARCH)/include $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/arch/$(ARCH)
+	# Sigh, arm64 headers also need arm headers...
+	cp -a arch/arm/include $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/arch/arm
+	cp -a Makefile $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)
+
+	( \
+		find arch/$(ARCH) -maxdepth 1 -name 'Makefile*' -print; \
+		find arch/$(ARCH) \( -name 'module.lds' -o -name 'Kbuild.platforms' -o -name 'Platform' \) -print; \
+		find $$(find arch/$(ARCH) \( -name include -o -name scripts \) -type d -print) -print; \
+	) | cpio -pdm $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)
+
+	# Clean up any leftover x86 artifacts from the kernel build, and then build scripts
+	find $(CURDIR)/scripts -type f | xargs file | grep 'x86-' | awk '{print $$1}' | tr -d ':' | xargs rm -f
+	mkdir -p $(BUILD_DIR)/build-tools/scripts
+	$(MAKE) $(KERNEL_OPTIONS) \
+		CROSS_COMPILE=$(DEB_HOST_GNU_TYPE)- \
+		-C $(BUILD_DIR)/build-tools/scripts -f $(CURDIR)/debian/rules.d/scripts/Makefile \
+		top_rulesdir=$(CURDIR)/debian/rules.d \
+		top_srcdir=$(CURDIR) \
+		OUTDIR=scripts \
+		install \
+		DESTDIR=$(DESTDIR_KBUILD) \
+		prefix=/usr/lib/linux-kbuild-$(VERSION)
+	# mkdir -p $(DESTDIR_KBUILD)/usr/lib/linux-kbuild-$(VERSION)
+	# touch $(DESTDIR_KBUILD)/usr/lib/linux-kbuild-$(VERSION)/hello
+
+	# Setup the symlink from the modules directory to the headers
+	install -d $(DESTDIR_HEADERS)/lib/modules/$(VERSION)
+	ln -s /usr/src/linux-headers-$(VERSION) $(DESTDIR_HEADERS)/lib/modules/$(VERSION)/build
+	ln -s /usr/lib/linux-kbuild-$(VERSION)/scripts $(DESTDIR_HEADERS)/usr/src/linux-headers-$(VERSION)/scripts

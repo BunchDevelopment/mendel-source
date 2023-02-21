@@ -1,0 +1,50 @@
+imx-board-audio (5-2) mendel-eagle; urgency=medium
+
+  * Set default audio sink to the codec.
+  * Add udev rules to give non-root users access to device nodes like
+    force_hp_detect.
+
+ -- Coral <coral-support@google.com>  Wed, 20 Jan 2021 14:20:04 -0800
+
+imx-board-audio (5-1) mendel-day; urgency=medium
+
+  * Cut for day release.
+
+ -- Coral <coral-support@google.com>  Mon, 07 Oct 2019 13:22:03 -0500
+
+imx-board-audio (4-1) mendel-chef; urgency=medium
+
+  * Cut for chef release
+
+ -- Coral <coral-support@google.com>  Tue, 19 Mar 2019 17:08:25 -0700
+
+imx-board-audio (3-1) mendel-beaker; urgency=medium
+
+  * Remove AIY moniker to match rebrand.
+
+ -- Coral <coral-support@google.com>  Wed, 13 Feb 2019 11:15:09 -0800
+
+imx-board-audio (2-1) mendel-beaker; urgency=medium
+
+  * Disable timer scheduling in pulseaudio.
+  * Fix UCM rules to allow headphones at boot time.
+
+ -- Coral <coral-support@google.com>  Thu, 24 Jan 2019 13:59:09 -0800
+
+imx-board-audio (1-1) mendel-beaker; urgency=medium
+
+  * Cut for beaker release and normalization of version.
+
+ -- Coral <coral-support@google.com>  Wed, 16 Jan 2019 12:00:00 -0800
+
+imx-board-audio (0.2) animal; urgency=medium
+
+  * Updates UCM rules and sets routes more correctly.
+
+ -- Coral <coral-support@google.com>  Thu, 06 Dec 2018 13:51:00 -0800
+
+imx-board-audio (0.1) animal; urgency=medium
+
+  * Initial release.
+
+ -- Coral <coral-support@google.com>  Mon, 04 Jun 2018 16:14:00 -0800
